@@ -1,0 +1,23 @@
+{
+  "name": "grapheme-blocker",
+  "version": "1.0.0",
+  "description": "test for grapheme regex",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.3.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "grapheme",
+    "unicode"
+  ],
+  "author": "Nick Doiron <ndoiron@mapmeld.com>",
+  "license": "MIT"
+}
