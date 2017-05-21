@@ -37,4 +37,28 @@ describe('different Unicode sequences', () => {
     }
     done();
   });
+  
+  it('does Malayalam', (done) => {
+    var txt = 'ഗ്ദ്ധ്ര്യ';
+    var idealSegments = ['ഗ്ദ്ധ്ര്യ'];
+    while (txt.length) {
+      var firstBlock = blocker(txt);
+      assert.equal(firstBlock, idealSegments[0]);
+      txt = txt.substring(firstBlock.length);
+      idealSegments.splice(0, 1);
+    }
+    done();
+  });
+
+  it('recognizes a break in Malayalam', (done) => {
+    var txt = 'ഗ്ദധ്ര്യ';
+    var idealSegments = ['ഗ്ദ', 'ധ്ര്യ'];
+    while (txt.length) {
+      var firstBlock = blocker(txt);
+      assert.equal(firstBlock, idealSegments[0]);
+      txt = txt.substring(firstBlock.length);
+      idealSegments.splice(0, 1);
+    }
+    done();
+  });
 });
